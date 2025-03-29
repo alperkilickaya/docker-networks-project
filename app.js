@@ -69,8 +69,9 @@ app.get("/people", async (req, res) => {
 
 // build image and run container: docker run -d --name mongodb mongo
 // 172.17.0.2 is the ip address of the container. we can look it up by running: docker inspect mongodb
+// for docker network use: "mongodb://mongodb:27017/swfavorites"
 mongoose.connect(
-  "mongodb://172.17.0.2:27017/swfavorites",
+  "mongodb://mongodb:27017/swfavorites",
   { useNewUrlParser: true },
   (err) => {
     if (err) {
